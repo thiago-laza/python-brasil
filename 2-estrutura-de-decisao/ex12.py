@@ -15,3 +15,63 @@ No exemplo o valor da hora é 5 e a quantidade de hora é 220.
         Total de descontos              : R$  165,00
         Salário Liquido                 : R$  935,00
 '''
+
+valor_hora = float(input('Informe o valor da hora trabalhada: '))
+hora = float(input('Informe a quantidade de horas trabalhadas: '))
+
+salario_bruto = valor_hora * hora
+
+sindicato = salario_bruto*0.03
+inss =  salario_bruto*0.1
+fgts = salario_bruto*0.11
+
+print(50*'-')
+
+if salario_bruto <= 900:
+    ir = 0
+    descontos = sindicato + inss + ir
+    salario_liquido = salario_bruto - descontos
+    print(f'Salario bruto: R$ {salario_bruto}')
+    print(f'IR (isento): R$ {ir}')
+    print(f'Sindicato (3%): R$ {sindicato}')
+    print(f'INSS (10%): R$ {inss}')
+    print(f'FGTS (11%): R$ {fgts}')
+    print(f'Total de descontos: R$ {descontos}')
+    print(f'Salario liquido: R$ {salario_liquido}')
+elif salario_bruto > 900 and salario_bruto <= 1500:
+    ir = salario_bruto*0.05
+    descontos = sindicato + inss + ir
+    salario_liquido = salario_bruto - descontos
+    print(f'Salario bruto: R$ {salario_bruto}')
+    print(f'IR (5%): R$ {ir}')
+    print(f'Sindicato (3%): R$ {sindicato}')
+    print(f'INSS (10%): R$ {inss}')
+    print(f'FGTS (11%): R$ {fgts}')
+    print(f'Total de descontos: R$ {descontos}')
+    print(f'Salario liquido: R$ {salario_liquido}')
+elif salario_bruto > 1500 and salario_bruto <= 2500:
+    ir = salario_bruto*0.1
+    descontos = sindicato + inss + ir
+    salario_liquido = salario_bruto - descontos
+    print(f'Salario bruto: R$ {salario_bruto}')
+    print(f'IR (10%): R$ {ir}')
+    print(f'Sindicato (3%): R$ {sindicato}')
+    print(f'INSS (10%): R$ {inss}')
+    print(f'FGTS (11%): R$ {fgts}')
+    print(f'Total de descontos: R$ {descontos}')
+    print(f'Salario liquido: R$ {salario_liquido}')
+elif salario_bruto > 2500:
+    ir = salario_bruto*0.2
+    descontos = sindicato + inss + ir
+    salario_liquido = salario_bruto - descontos
+    print(f'Salario bruto: R$ {salario_bruto}')
+    print(f'IR (20%): R$ {ir}')
+    print(f'Sindicato (3%): R$ {sindicato}')
+    print(f'INSS (10%): R$ {inss}')
+    print(f'FGTS (11%): R$ {fgts}')
+    print(f'Total de descontos: R$ {descontos}')
+    print(f'Salario liquido: R$ {salario_liquido}')
+
+print(50*'-')
+
+    
