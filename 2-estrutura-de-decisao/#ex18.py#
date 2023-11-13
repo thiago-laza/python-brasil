@@ -15,9 +15,10 @@
 #*** se mes for 1 ate 7 -> dia%2!=0 -> dia >0 e dia <= 31(caso contrario dia > 0 e dia < 30
 # se mes for 8 ate 12 -> dia%2=0 -> dia >0 e dia <= 31(caso contrario dia > 0 e dia < 30
 
-dia = 31
-mes = 04
-ano = 
+dia = 29
+mes = 2
+ano = 2024
+
 if mes >=1 and mes <=7:
     if mes == 2:
         if ano % 4 and ano % 100 !=0 or ano % 400 ==0:
