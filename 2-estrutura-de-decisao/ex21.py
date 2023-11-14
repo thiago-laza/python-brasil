@@ -7,6 +7,15 @@ quatro notas de 10, uma nota de 5 e quatro notas de 1.'''
 
 valor_saque = int(input('Informe o valor que deseja sacar: '))
 
+'''
+1. pensar nos valores maiores que 100 e menores ou igual a 600:
+
+-> dezena maior ou igual a 5:
+    nota100 = valor // 100
+    
+
+'''
+
 if valor_saque < 10 or valor_saque > 600:
     print('Valor invalido. Permitido minimo de R$ 10,00 e maximo de R$ 600,00.')
 else:
@@ -27,6 +36,7 @@ else:
                     notas_1 = rest_4
 
 print(notas_100,notas_50,notas_10,notas_5,notas_1)
+
                     
 
 
