@@ -7,35 +7,26 @@ quatro notas de 10, uma nota de 5 e quatro notas de 1.'''
 
 valor_saque = int(input('Informe o valor que deseja sacar: '))
 
-'''
-1. pensar nos valores maiores que 100 e menores ou igual a 600:
-
--> dezena maior ou igual a 5:
-    nota100 = valor // 100
-    
-
-'''
 
 if valor_saque < 10 or valor_saque > 600:
     print('Valor invalido. Permitido minimo de R$ 10,00 e maximo de R$ 600,00.')
 else:
-    if valor_saque > 100:
-        notas_100 = valor_saque // 100
-        rest_1 = valor_saque - notas_100*100
-        if rest_1 >= 50:
-            notas_50 = rest_1 // 50
-            rest_2 = rest_1 - notas_50*50
-        else:
-            
-            if rest_2 >= 10:
-                notas_10 = rest_2 // 10
-                rest_3 = rest_2 - notas_10*10
-                if rest_3 >=5:
-                    notas_5 = rest_3 // 5
-                    rest_4 = rest_3 - notas_5*5
-                    notas_1 = rest_4
+    cedulas_100 = valor_saque // 100
+    resto_1 = valor_saque - cedulas_100*100
+    cedulas_50 = resto_1 // 50
+    resto_2 = valor_saque - (cedulas_100*100 + cedulas_50*50)
+    cedulas_10 = resto_2// 10
+    resto_3 = valor_saque - (cedulas_100*100+cedulas_50*50 + cedulas_10*10)
+    cedulas_5 = resto_3 // 5
+    resto_4 = valor_saque - (cedulas_100*100+cedulas_50*50 + cedulas_10*10 + cedulas_5*5)
+    cedulas_1 = resto_4
+   
 
-print(notas_100,notas_50,notas_10,notas_5,notas_1)
+print(f'Para sacar R$ {valor_saque} sao necessarios {cedulas_100} cedulas de R$ 100,00, {cedulas_50} cedulas de R$ 50,00, {cedulas_10} cedulas de R$ 10,00, {cedulas_5} cedulas de R$ 5,00 e {cedulas_1} cedulas de R$ 1,00.')
+
+
+
+  
 
                     
 
