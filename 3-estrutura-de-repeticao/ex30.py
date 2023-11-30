@@ -7,3 +7,6 @@ Panificadora Pão de Ontem - Tabela de preços
 2 - R$ 0.36
 ...
 50 - R$ 9.00'''
+
+for i in range(1,51):
+    print(f'{i} - R$ {i*0.18:.2f}')

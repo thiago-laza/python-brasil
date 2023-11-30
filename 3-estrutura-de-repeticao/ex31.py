@@ -12,3 +12,17 @@ Total: R$ 9.00
 Dinheiro: R$ 20.00
 Troco: R$ 11.00
 ...'''
+
+while True:
+    cont = 1
+    acu = 0
+    lista = []
+    while True:
+        produto = float(input(f'Produto {cont}: '))
+        acu+=produto
+        cont+=1
+        lista.append(produto)
+        if produto == 0:
+            for i in lista[:-1]:
+                print(i)
+            
