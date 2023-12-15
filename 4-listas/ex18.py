@@ -2,12 +2,15 @@
 jogador após cada jogo. Para isto, faz-se necessário o desenvolvimento de um programa, que será utilizado pelas telefonistas, 
 para a computação dos votos. Sua equipe foi contratada para desenvolver este programa, utilizando a linguagem de programação 
 C++. Para computar cada voto, a telefonista digitará um número, entre 1 e 23, correspondente ao número da camisa do jogador. 
-Um número de jogador igual zero, indica que a votação foi encerrada. Se um número inválido for digitado, o programa deve ignorá-lo, mostrando uma breve mensagem de aviso, e voltando a pedir outro número. Após o final da votação, o programa deverá exibir:
-O total de votos computados;
-Os númeos e respectivos votos de todos os jogadores que receberam votos;
-O percentual de votos de cada um destes jogadores;
-O número do jogador escolhido como o melhor jogador da partida, juntamente com o número de votos e o percentual de votos 
-dados a ele. Observe que os votos inválidos e o zero final não devem ser computados como votos. 
+Um número de jogador igual zero, indica que a votação foi encerrada. Se um número inválido for digitado, o programa deve ignorá-lo,
+ mostrando uma breve mensagem de aviso, e voltando a pedir outro número. Após o final da votação, o programa deverá exibir:
+1-O total de votos computados;
+2-Os númeos e respectivos votos de todos os jogadores que receberam votos;
+3-O percentual de votos de cada um destes jogadores;
+4-O número do jogador escolhido como o melhor jogador da partida, juntamente com o número de votos e o percentual de votos
+dados a ele.
+
+Observe que os votos inválidos e o zero final não devem ser computados como votos.
 O resultado aparece ordenado pelo número do jogador. O programa deve fazer uso de arrays. O programa deverá executar 
 o cálculo do percentual de cada jogador através de uma função. Esta função receberá dois parâmetros: o número de votos 
 de um jogador e o total de votos. A função calculará o percentual e retornará o valor calculado. Abaixo segue uma tela 
@@ -36,4 +39,25 @@ Jogador Votos           %
 9               4               50,0%
 10              3               37,5%
 11              1               12,5%
-O melhor jogador foi o número 9, com 4 votos, correspondendo a 50% do total de votos.'''
+O melhor jogador foi o número 9, com 4 votos, correspondendo a 50% do total de votos.
+'''
+votos = []
+while True:
+    jogador = int(input('Numero do jogador (0=fim): '))
+    votos.append(jogador)
+    if jogador < 0 or jogador > 23:
+        votos.pop()
+        print('Informe um valor entre 1 e 23 ou 0 para sair!')
+    elif jogador == 0:
+        votos.pop()
+        break
+print('Resultado da votacao:')
+print(f'Foram computados {len(votos)}')
+
+print('Jogador    votos     %')
+for j in range(1,24):
+    print(f'{j}            {votos.count(j)}     {(votos.count(j)/len(votos))*100}')
+
+print(votos)
+#print(f'O jogador mais votado foi {max(votos)} com {votos.count(max(votos))} votos e {(votos.count(max(votos))/len(votos))*100}%')
+print()
